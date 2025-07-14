@@ -4,7 +4,7 @@ const client = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY!,
   baseURL: 'https://openrouter.ai/api/v1',
   defaultHeaders: {
-    'HTTP-Referer': 'http://localhost:3000/', // update for production
+    'HTTP-Referer': 'https://your-app-url.vercel.app', // update for production
     'X-Title': 'AI Blog Summarizer',
   },
 });
@@ -12,7 +12,7 @@ const client = new OpenAI({
 export async function translateSummaryToUrdu(summary: string) {
   try {
     const res = await client.chat.completions.create({
-      model: 'deepseek/deepseek-chat-v3-0324:free', 
+      model: 'openrouter/auto', // ✅ Let OpenRouter choose
       messages: [
         {
           role: 'user',
