@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Clean the text
-    let cleanText = mainContent
+    const cleanText = mainContent
       .replace(/\s+/g, ' ')
       .replace(/&nbsp;/g, ' ')
       .replace(/&amp;/g, '&')
