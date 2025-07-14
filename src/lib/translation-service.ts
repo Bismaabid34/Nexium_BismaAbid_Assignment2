@@ -12,7 +12,7 @@ const client = new OpenAI({
 export async function translateSummaryToUrdu(summary: string) {
   try {
     const res = await client.chat.completions.create({
-      model: 'google/gemini-2.5-flash-lite-preview-06-17', 
+      model: 'deepseek/deepseek-chat-v3-0324:free', 
       messages: [
         {
           role: 'user',
